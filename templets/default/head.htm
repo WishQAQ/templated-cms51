@@ -1,0 +1,25 @@
+<div class="header" id="head">
+  <div class="header_top">
+    <div class="logo"><a href="/"><img src="/skin/news/images/logo.png" alt=""></a></div>
+    <div class="h-right">
+      <ul class="fl">
+        <li class="li_a email"><a href="mailto:12345678@qq.com" target="_blank">邮箱:12345678@qq.com</a></li>
+        
+      </ul>
+    </div>
+    <!--end h-right--> 
+  </div>
+  <!--end header_top-->
+  <div class="navbody">
+    <div class="nav">
+      <ul class="nav_ul">
+	  
+		<li class="nav_li"><a id="index" href="/" title="首页" {dede:field name=typeid runphp="yes"}(@me=="")? @me="   class='on'  ":@me="";{/dede:field}>首页</a></li>
+        {dede:channel row="10" type="top" col="1" currentstyle="<li class='nav_li'><a href='~typelink~' class='on'>~typename~</a></li>" }
+		<li class="nav_li"><a id="content" href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a> </li>
+		{/dede:channel}
+		
+      </ul>
+    </div>
+  </div>
+</div>

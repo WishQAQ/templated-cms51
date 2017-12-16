@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/skin/news/images/p.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/scripts/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery.form.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/scripts/lhgdialog/lhgdialog.js?skin=idialog"></script>
+<script type="text/javascript" src="/templates/green/js/base.js"></script>
+</head>
+<body>
+<!--Header-->
+<script src="/skin/news/js/jquery.SuperSlide.js"></script>
+<script src="/skin/news/js/jquery.cookie.js" type="text/javascript"></script>
+{dede:include filename="head.htm"/}
+<script  type="text/javascript" src="/skin/news/js/gb2big5.js"></script>
+<!--/Header-->
+<div class="headImg" style=" background-image:url('/skin/images/201410231406114800.jpg');"></div>
+<div class="pagemain">
+  <div class="fl">
+    <div class="lm fwjl"></div>
+    <ul class="lmlist">
+            {dede:channel row="10" type="son" col="1" currentstyle="<li><a href='~typelink~' class='on'>~typename~</a></li>" }
+        	<li><a title="[field:typename/]" href="[field:typeurl/]" 
+            >[field:typename/]</a></li>
+			{/dede:channel}
+              <li style="height:13px; background: none;"></li>
+          </ul>
+    <div class="black300"></div>
+  </div>
+  <div class="fr">
+    <div class="tit">
+        	<font>{dede:field name='typename'/}</font>
+            <span>{dede:field name='position'/}</span>
+        </div>
+    <div class="main">
+      <!--留言列表-->
+      <div class="comment_box">
+        <ol class="comment_list">
+        </ol>
+      </div>
+      <br />
+      <div class="flickr"></div>
+      <!--放置页码列表-->
+      <!--/留言列表-->
+      <div class="black20"></div>
+      <div style="border-top:1px #ddd solid;"></div>
+      <h3 class="base_tit">发表留言<a name="Add" id="Add"></a></h3>
+      <div class="black20"></div>
+      <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+
+        <div class="form_box">
+          <dl>
+            <dt>用户昵称：</dt>
+            <dd>
+              <input id="nicheng" name="nicheng" type="text" class="input txt" datatype="*" sucmsg=" " />
+            </dd>
+          </dl>
+          <dl>
+            <dt>联系电话：</dt>
+            <dd>
+              <input id="tel" name="tel" type="text" class="input txt" datatype="*0-20" sucmsg=" " />
+            </dd>
+          </dl>
+          <dl>
+            <dt>在线QQ：</dt>
+            <dd>
+              <input id="zaixian" name="zaixian" type="text" class="input txt" datatype="*0-20" sucmsg=" " />
+            </dd>
+          </dl>
+          <dl>
+            <dt>电子邮箱：</dt>
+            <dd>
+              <input id="emial" name="emial" type="text" class="input txt" />
+            </dd>
+          </dl>
+          <dl>
+            <dt>留言标题：</dt>
+            <dd>
+              <input id="biaoti" name="biaoti" type="text" class="input txt" datatype="*2-100" sucmsg=" " />
+            </dd>
+          </dl>
+          <dl>
+            <dt>留言内容：</dt>
+            <dd>
+              <textarea id="neirong" name="neirong" class="input txt" datatype="*" sucmsg=" " style="width:350px;height:80px;"></textarea>
+            </dd>
+          </dl>
+          <dl>
+            <dt></dt>
+			<input type="hidden" name="dede_fields" value="nicheng,text;tel,text;zaixian,text;emial,text;biaoti,text;neirong,multitext" />
+<input type="hidden" name="dede_fieldshash" value="ca54f6be2b25212e37eb73c59d742840" />
+            <dd>
+              <input name="btnSubmit" type="submit" value="发表留言" class="btn_submit" />
+            </dd>
+          </dl>
+        </div>
+        <div class="clear"></div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--Footer-->
+{dede:include filename="footer.htm"/}
+<!--/Footer-->
+<style>
+  /*评论*/
+.comment_box{}
+	.comment_list li{padding:15px 0;border-bottom:1px solid #F0F0F2; background-color:#fff; padding:15px;}
+	.comment_list li .floor{float:right;font-size:18px;color:#DDD;}
+	.comment_list li .avatar{display:block;background:#FFF;border-radius:2px 2px 2px 2px;float:left;height:36px;overflow:hidden;width:36px;}
+	.comment_list li .avatar img{width:36px;height:36px;}
+	.comment_list li .inner{margin-left:48px;}
+	.comment_list li .inner p{font-size:13px;}
+	.comment_list li .inner .meta{padding-top:3px;color:#999;border:none;font-size: 12px;}
+	.comment_list li .blue{ color:#1E7BB3;}
+	.comment_list li .answer{margin-left:48px;padding:10px;background:#F6F6F6;border:1px solid #E6E6E6;border-radius:3px 3px 3px 3px;}
+	.comment_list li .answer .meta{color:#999;margin-bottom:5px;padding:0;border:none;font-size: 12px;}
+.comment_editor{padding:10px 0; width:100%;}
+
+/*css flickr style pagination*/
+div.flickr{ padding:0px;margin:0px; text-align:center; font-family:Verdana; font-size:12px;text-align:right;}
+div.flickr a{ border-right: #dedfde 1px solid; padding-right: 6px; background-position: 50% bottom; border-top: #dedfde 1px solid; padding-left: 6px; padding-bottom: 2px; border-left: #dedfde 1px solid; color: #0061de; margin-right: 3px; padding-top: 2px; border-bottom: #dedfde 1px solid; text-decoration: none; }
+div.flickr a:hover{ border-right: #000 1px solid; border-top: #000 1px solid; background-image: none; border-left: #000 1px solid; color: #fff; border-bottom: #000 1px solid; background-color: #0061de; }
+div.flickr a:active{ border-right: #000 1px solid; border-top: #000 1px solid; background-image: none; border-left: #000 1px solid; color: #fff; border-bottom: #000 1px solid; background-color: #0061de; }
+div.flickr span{ padding-right: 6px; padding-left: 6px; padding-bottom: 2px; color: #999; margin-right: 3px; padding-top: 2px; }
+div.flickr span.current{ padding-right: 6px; padding-left: 6px; font-weight: bold; padding-bottom: 2px; color: #ff0084; margin-right: 3px; padding-top: 2px; }
+div.flickr span.disabled{ padding-right: 6px; padding-left: 6px; padding-bottom: 2px; color: #adaaad; margin-right: 3px; padding-top: 2px; }
+
+.base_tit{border-bottom:1px solid #DADADA;color:#444;font-size:14px;margin:20px auto 2px 0;padding-bottom:5px;}
+	.base_tit span{float:right;font-size:12px;font-weight:100;margin:5px 0 0 0;color:#ccc;}
+	.base_tit span a{color:#999;}
+.form_box dl{clear:both;padding:4px 0;font-size:12px;line-height:28px;}
+	.form_box dl dt{display:block;float:left;width:150px;text-align:right;}
+	.form_box dl dt em{padding-right:5px;color:#FF0000;font-style:normal;}
+	.form_box dl dd{margin-left:150px; padding-left:10px;}
+	.form_box dl dd i{display:block;line-height:28px;color:#999;font-size:12px;font-style:normal;}
+	.form_box dl dd em{line-height:28px;color:#999;font-size:12px;font-style:normal;}
+	.form_box dl dd .btn_submit{padding:10px 30px;border:1px solid #429342;background:#52A152;color:#fff;font-size:14px;line-height:1em;cursor:pointer;font-family:'Microsoft YaHei';}
+
+</style>
+</body>
+</html>

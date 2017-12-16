@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/skin/news/images/p.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--Header-->
+<script src="/skin/news/js/jquery-1.7.1.min.js"></script>
+<script src="/skin/news/js/jquery.SuperSlide.js"></script>
+<script src="/skin/news/js/jquery.cookie.js" type="text/javascript"></script>
+{dede:include filename="head.htm"/}
+<!--end header-->
+<script  type="text/javascript" src="/skin/news/js/gb2big5.js"></script>
+<!--/Header-->
+
+<div class="headImg" style=" background-image:url('/skin/images/201410291035143687.jpg');"></div>
+
+<div class="pagemain">
+	<div class="fl">
+    	<div class="lm zycy"></div>
+        <ul class="lmlist">
+            {dede:channel row="10" type="son" col="1" currentstyle="<li><a href='~typelink~' class='on'>~typename~</a></li>" }
+        	<li><a title="[field:typename/]" href="[field:typeurl/]" 
+            >[field:typename/]</a></li>
+			{/dede:channel}
+              <li style="height:13px; background: none;"></li>
+          </ul>
+          
+          <div class="black300"></div>
+
+
+    </div>
+    <div class="fr">
+    	<div class="tit">
+        	<font>{dede:field name='typename'/}</font>
+            <span>{dede:field name='position'/}</span>
+        </div>
+        <div class="main">
+            {dede:field.content/}
+        </div>       
+    
+    
+    </div>
+</div>
+
+<!--Footer-->
+
+{dede:include filename="footer.htm"/}
+<!--/Footer-->
+</body>
+</html>
